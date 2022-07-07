@@ -1,23 +1,23 @@
 # 目录
 ~/mongo-test
 
-*shard0 目录*  
+__shard0 目录__  
 ./s0  
 ./s0/log  
 ./s0/data  
 
 
-*shard1 目录*  
+**shard1 目录**  
 ./s1  
 ./s1/log  
 ./s1/data  
 
-*config 目录*  
+__config 目录__  
 ./c0  
 ./c0/log  
 ./c0.data  
 
-*router server 目录*  
+**router server 目录**  
 ./r0  
 ./r0/log  
 ./r0/data  
