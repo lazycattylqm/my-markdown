@@ -1,0 +1,11 @@
+sharding:
+  configDB: c0/localhost:27020
+net:
+  bindIp: localhost
+  port: 27030
+systemLog:
+  destination: file
+  path: "/Users/liqiming/mongodb/r0/log/mongo.log"
+  logAppend: true
+processManagement:
+  fork: true
