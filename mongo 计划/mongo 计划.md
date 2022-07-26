@@ -172,16 +172,16 @@ mongos --config mongos.yaml
 
 mongosh --host localhost --port 27030
 
-sh.addShard( "s0/localhost:27010")
+sh.addShard("s0/localhost:27010")
 
-sh.addShard( "s1/localhost:27011")
+sh.addShard("s1/localhost:27011")
 
 
 db.adminCommand( { enableSharding: "test" } )
 
 sh.shardCollection("test.zone", { zone : 1, userId: 1} )
 
-sh.disableBalancing("chat.message")
+sh.disableBalancing("test.zone")
 
  sh.isBalancerRunning() 
 
@@ -195,16 +195,12 @@ sh.updateZoneKeyRange("test.zone", { zone: "china", userId: MinKey }, { zone: "c
 
 sh.updateZoneKeyRange("test.zone", { zone: "india", userId: MinKey }, { zone: "india", userId: MaxKey }, "india")
 
-sh.enableBalancing("chat.messages")
+sh.enableBalancing("test.zone")
 
 db.zone.insertMany(
    [{
-  "zone": "china",
-  "userId": 111,
-  "data": "liqiming_china"
-}, {
   "zone": "india",
-  "userId": 112,
+  "userId": 115,
   "data": "liqiming_india"
 }]
 )
